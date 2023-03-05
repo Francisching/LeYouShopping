@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/F-Gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-Item/f-item-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-Item/f-item-pojo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-Item/f-item-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-Item/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-Item/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-Registry/F_geteway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-Registry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/F-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../../../../apache-maven-3.8.6/repository/org/springframework/boot/spring-boot-starter-parent/2.1.12.RELEASE/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
