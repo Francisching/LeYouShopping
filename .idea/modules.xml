@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/F-Gateway/F-Gateway.iml" filepath="$PROJECT_DIR$/F-Gateway/F-Gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F-Item/F-Item.iml" filepath="$PROJECT_DIR$/F-Item/F-Item.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F-Registry/F-Registry.iml" filepath="$PROJECT_DIR$/F-Registry/F-Registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Olofsson.iml" filepath="$PROJECT_DIR$/Olofsson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F-Item/f-item-api/f-item-api.iml" filepath="$PROJECT_DIR$/F-Item/f-item-api/f-item-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F-Item/f-item-pojo/f-item-pojo.iml" filepath="$PROJECT_DIR$/F-Item/f-item-pojo/f-item-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F-Item/f-item-service/f-item-service.iml" filepath="$PROJECT_DIR$/F-Item/f-item-service/f-item-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F-common/ly-common.iml" filepath="$PROJECT_DIR$/F-common/ly-common.iml" />
+    </modules>
+  </component>
+</project>
