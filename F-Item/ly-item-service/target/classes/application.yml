@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://ly-mq:3306/heima?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ly-registry:10086/eureka
+logging:
+  level:
+    com.leyou: debug
+
+
+mybatis-plus:
+  type-aliases-package: com.leyou.item.entity # 别名扫描包
+  # mapper-locations: classpath*: mappers/*.xml # mapper的xml文件地址
+  global-config:
+    db-config:
+      id-type: auto # id默认为自增长

@@ -1,0 +1,58 @@
+server:
+  port: 10011
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ly-registry:10086/eureka
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 6000 # 熔断超时时长：6000ms
+ribbon:
+  ConnectTimeout: 500 # ribbon链接超时时长
+  ReadTimeout: 2000 # ribbon读取超时时长
+spring:
+  application:
+    name: ly-gateway
+  cloud:
+    gateway:
+      globalcors: # 全局的跨域处理
+        add-to-simple-url-handler-mapping: true # 是否将当前cors配置加入到SimpleUrlHandlerMapping中，解决options请求被拦截问题
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: # 允许哪些网站的跨域请求
+              - "http://manage.leyou.com"
+              - "http://www.leyou.com"
+            allowedMethods: # 允许的跨域ajax的请求方式
+              - "GET"
+              - "POST"
+              - "DELETE"
+              - "PUT"
+              - "OPTIONS"
+            allowedHeaders: "*" # 允许在请求中携带的头信息
+            allowCredentials: true # 是否允许携带cookie
+            maxAge: 360000 # 这次跨域检测的有效期
+      default-filters: # 默认过滤项
+        - StripPrefix=1 # 去除路由前缀
+        - name: Hystrix # 指定过滤工厂名称（可以是任意过滤工厂类型）
+          args: # 指定过滤的参数
+            name: fallbackcmd  # hystrix的指令名
+            fallbackUri: forward:/hystrix/fallback # 失败后的跳转路径
+        - name: RequestRateLimiter #请求数限流 名字不能随便写
+          args:
+            key-resolver: "#{@ipKeyResolver}" # SPEL,指定一个key生成器
+            redis-rate-limiter.replenishRate: 2 # 生成令牌的速率
+            redis-rate-limiter.burstCapacity: 2 # 桶的容量
+      routes:
+        - id: item-service #路由的唯一标识（id，和服务名无关）
+          uri: lb://item-service # 使用ribbon负载均衡，适配具体的服务实例
+          predicates: # 断言
+            - Path=/item/** #根据路径生效路由，生效条件是请求网关时，路径地址已item开始
+#这里全局路由器有个问题 就是配了的路由都会实现上面的方法 但是如果没有配置路由就不会生效
+  redis:
+    host: ly-redis
+
+logging:
+  level:
+    com.leyou: debug
