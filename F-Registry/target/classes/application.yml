@@ -1,0 +1,16 @@
+server:
+  port: 10086
+
+
+
+spring:
+  application:
+    name: ly-registry
+  #容器名称
+
+eureka:
+  client:
+    fetch-registry: false  #关闭拉取
+    register-with-eureka: false  #关闭注册自己
+    service-url:
+      defaultZone : http://ly-registry:10086/eureka  #跳转路径 要写f-registry
